@@ -99,7 +99,7 @@ public class APIActivity extends AppCompatActivity {
         List<Fragment> fragments = new ArrayList<Fragment>();
         fragments.add(new SubscriptionInfoFragment());
         fragments.add(new PhoneManagerFragment());
-       
+        fragments.add(new UIFragment());
         FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);

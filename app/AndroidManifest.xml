@@ -41,17 +41,29 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/list_phone_normal"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".APIActivity"       android:theme="@style/AppTheme">
+        
+        
+        <activity android:name=".APIActivity" android:theme="@style/AppTheme" > 
              <intent-filter>
                  <action android:name="android.intent.action.MAIN" />
                  <category android:name="android.intent.category.LAUNCHER" />
              </intent-filter>
         </activity>
+        
+
+       <activity android:name=".TestActivity" android:theme="@android:style/Theme.DeviceDefault.Light"
+            android:icon="@drawable/list_save_phone_normal"> 
+<!--              <intent-filter> -->
+<!--                  <action android:name="android.intent.action.MAIN" /> -->
+<!--                  <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--              </intent-filter> -->
+        </activity>
+        
     </application>
 
 </manifest>
