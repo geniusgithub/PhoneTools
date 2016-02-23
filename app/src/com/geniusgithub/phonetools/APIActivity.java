@@ -90,10 +90,10 @@ public class APIActivity extends AppCompatActivity {
     private void setupViewPager() {
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
         List<String> titles = new ArrayList<String>();
-        titles.add("Page One");
-        titles.add("Page Two");
-        titles.add("Page Three");
-        titles.add("Page Four");
+        titles.add("P 1");
+        titles.add("P 2");
+        titles.add("P 3");
+        titles.add("P 4");
         mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(0)));
         mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(1)));
         mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(2)));
