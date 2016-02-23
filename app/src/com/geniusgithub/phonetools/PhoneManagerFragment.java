@@ -69,6 +69,8 @@ public class PhoneManagerFragment extends Fragment implements View.OnClickListen
             int size = mPhoneAccountHandle.size();
             log.i("getAllPhoneAccountHandles size=" + size);
         }
+        
+ 
     }
 
 

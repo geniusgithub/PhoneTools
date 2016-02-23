@@ -93,13 +93,16 @@ public class APIActivity extends AppCompatActivity {
         titles.add("Page One");
         titles.add("Page Two");
         titles.add("Page Three");
+        titles.add("Page Four");
         mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(0)));
         mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(1)));
         mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(2)));
+        mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(3)));
         List<Fragment> fragments = new ArrayList<Fragment>();
         fragments.add(new SubscriptionInfoFragment());
         fragments.add(new PhoneManagerFragment());
         fragments.add(new UIFragment());
+        fragments.add(new CalllogFragment());
         FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);

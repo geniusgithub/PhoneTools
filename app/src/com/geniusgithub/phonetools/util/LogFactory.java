@@ -2,7 +2,7 @@ package com.geniusgithub.phonetools.util;
 
 
 public class LogFactory {
-	private static final String TAG = "DialerTest";
+	private static final String TAG = "PhoneTools";
 	private static CommonLog log = null;
 
 	public static CommonLog createLog() {
