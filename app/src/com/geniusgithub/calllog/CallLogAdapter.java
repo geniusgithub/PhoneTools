@@ -45,11 +45,12 @@ public class CallLogAdapter extends RecyclerView.Adapter<ViewHolder>{
    
    @Override
    public int getItemCount() {
-       if (mCursor == null) {
-           return 0;
+	   int itemCount = 0;
+       if (mCursor != null) {
+    	   itemCount = mCursor.getCount();
        }
-
-       return mCursor.getCount();
+    //   log.i("getItemCount = " + itemCount);
+       return itemCount;
    }
 	
     public Object getItem(int position) {
@@ -71,7 +72,7 @@ public class CallLogAdapter extends RecyclerView.Adapter<ViewHolder>{
 
 	@Override
 	public void onBindViewHolder(ViewHolder viewHolder, int position) {
-
+	//	log.i("onBindViewHolder position = " + position);
         switch (getItemViewType(position)) {
             case NORMAL_CALLLOG_TYPE:
                 bindCallLogListViewHolder(viewHolder, position);
