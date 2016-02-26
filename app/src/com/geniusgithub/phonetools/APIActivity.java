@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.geniusgithub.calllog.CallLogFragment;
 import com.geniusgithub.phonetools.util.CommonLog;
 import com.geniusgithub.phonetools.util.LogFactory;
 
@@ -102,7 +103,7 @@ public class APIActivity extends AppCompatActivity {
         fragments.add(new SubscriptionInfoFragment());
         fragments.add(new PhoneManagerFragment());
         fragments.add(new UIFragment());
-        fragments.add(new CalllogFragment());
+        fragments.add(new CallLogFragment());
         FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);
