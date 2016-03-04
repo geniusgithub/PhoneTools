@@ -35,27 +35,22 @@
                      android:background="@drawable/dialpad_call_button_single"
                      android:layout_marginBottom="20dp"
                      />
-                          
-                          
-                   <TextView
-                     android:id="@+id/tv_shadow"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:text="call textview"
-                     android:drawableLeft="@drawable/ic_launcher"
-                     android:background="@drawable/dialpad_call_button_single"
-		             android:clickable="true"
-		             android:textSize="11sp" />
-                 
-<!--                  <TextView -->
-<!--                      android:layout_width="wrap_content" -->
-<!--                      android:layout_height="wrap_content" -->
-<!--                      android:textAppearance="?android:attr/textAppearanceMedium" -->
-<!--                      android:text="Medium Text" -->
-<!--                      android:id="@+id/tv_sub" -->
-<!--                      /> -->
 
-             </LinearLayout>
+    			
+
+		       	<ImageButton
+		            android:id="@+id/floating_action_button"
+		            android:background="@drawable/floating_action_buttonex"
+		            android:layout_width="56dp"
+		            android:layout_height="56dp"
+		            android:layout_margin="20dp"
+		            android:src="@drawable/fab_ic_call"/>
+    		
+
+
+     </LinearLayout>
+             
+
 
     </ScrollView>
 

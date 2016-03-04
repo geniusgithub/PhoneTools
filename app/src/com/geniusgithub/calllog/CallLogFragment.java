@@ -129,6 +129,8 @@ public class CallLogFragment extends Fragment implements CallLogQueryHandler.Lis
         mAdapter = new CallLogAdapter(getActivity());
         mRecyclerView.setAdapter(mAdapter);
 
+
+        
         return view;
     }
 

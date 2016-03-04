@@ -1,10 +1,8 @@
 package com.geniusgithub.phonetools;
 
-import com.geniusgithub.phonetools.util.CommonLog;
-import com.geniusgithub.phonetools.util.LogFactory;
-
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,7 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+
+import com.geniusgithub.phonetools.util.CommonLog;
+import com.geniusgithub.phonetools.util.LogFactory;
+import com.geniusgithub.phonetools.util.ViewUtil;
 
 public class UIFragment extends Fragment implements View.OnClickListener{
 
@@ -22,6 +23,9 @@ public class UIFragment extends Fragment implements View.OnClickListener{
 	 private View mRootView;
 	 private Button mBtnShadow;
 	    
+	 private View mFloatButton;
+	 
+	 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -46,6 +50,13 @@ public class UIFragment extends Fragment implements View.OnClickListener{
         log.i( "w = " + width + ", h = " + height);
         drawable.setBounds(0, 0, width, height);
         mBtnShadow.setCompoundDrawables(drawable, null, null, null);
+
+
+        
+        mFloatButton = view.findViewById(R.id.floating_action_button);
+        ViewUtil.setupFloatingActionButton(mFloatButton, getResources().getDimensionPixelSize(R.dimen.floating_action_button_translation_z));
+        
+    
     }
 
 	@Override
@@ -53,5 +64,6 @@ public class UIFragment extends Fragment implements View.OnClickListener{
 		// TODO Auto-generated method stub
 		
 	}
+
 
 }

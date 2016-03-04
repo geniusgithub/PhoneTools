@@ -46,6 +46,10 @@
         android:theme="@style/AppTheme"
         >
         
+        <meta-data
+            android:name="com.thinkland.juheapi.openid"
+            android:value="JH38c7b8353c80c263ba815b63092a18e3" />
+        
         
         <activity android:name=".APIActivity" android:theme="@style/AppTheme" > 
              <intent-filter>
