@@ -47,7 +47,6 @@ public class UIFragment extends Fragment implements View.OnClickListener{
         Drawable drawable = mContext.getDrawable(R.drawable.call_bar_dial2_subordinate);
         int width = drawable.getMinimumWidth();
         int height = drawable.getMinimumHeight();
-        log.i( "w = " + width + ", h = " + height);
         drawable.setBounds(0, 0, width, height);
         mBtnShadow.setCompoundDrawables(drawable, null, null, null);
 
