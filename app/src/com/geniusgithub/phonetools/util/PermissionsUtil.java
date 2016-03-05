@@ -38,7 +38,7 @@ public class PermissionsUtil {
     public static final String CONTACTS = permission.READ_CONTACTS;
     public static final String SMS = permission.SEND_SMS;
     public static final String LOCATION = permission.ACCESS_FINE_LOCATION;
-    public static final String STORAGE = permission.WRITE_EXTERNAL_STORAGE;
+    public static final String STORAGE = permission.READ_EXTERNAL_STORAGE;
     public static final String CALENDAR = permission.READ_CALENDAR; 
     public static final String MICROPHONE = permission.RECORD_AUDIO;
     public static final String SENSORS = permission.BODY_SENSORS;
@@ -53,7 +53,7 @@ public class PermissionsUtil {
         return android.os.Build.VERSION.SDK_INT;
     }
 
-    public static String[] sRequiredPermissions = new String[] { STORAGE };
+    public static String[] sRequiredPermissions = new String[] { PHONE, LOCATION, STORAGE };
     
 
 
@@ -103,7 +103,6 @@ public class PermissionsUtil {
 
         if (!sIsAtLeastM)
             return true;
-
         return context.checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED;
 
     }

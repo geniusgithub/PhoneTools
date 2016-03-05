@@ -146,7 +146,7 @@ public class CallLogFragment extends Fragment implements CallLogQueryHandler.Lis
     public void onResume() {
         super.onResume();
         log.i("onResume");
-        fetchCalls();
+  //      fetchCalls();
     }
 
     @Override

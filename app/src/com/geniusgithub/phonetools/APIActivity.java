@@ -95,15 +95,18 @@ public class APIActivity extends AppCompatActivity {
         titles.add("P 2");
         titles.add("P 3");
         titles.add("P 4");
+        titles.add("P 5");
         mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(0)));
         mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(1)));
         mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(2)));
         mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(3)));
+        mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(4)));
         List<Fragment> fragments = new ArrayList<Fragment>();
         fragments.add(new SubscriptionInfoFragment());
         fragments.add(new PhoneManagerFragment());
         fragments.add(new UIFragment());
         fragments.add(new CallLogFragment());
+        fragments.add(new PermissionFragment());
         FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);

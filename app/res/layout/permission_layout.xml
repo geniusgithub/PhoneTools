@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+
+     <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+
+            <LinearLayout android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginTop="20dp"
+              android:layout_marginLeft="20dp">
+
+              	<Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GET PERMISSION"
+                android:id="@+id/btn_permission"
+                />
+
+            	<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/permission_introductione"
+                />
+
+     		</LinearLayout>
+     		
+            
+    </ScrollView>
+    
+     
+</LinearLayout>
