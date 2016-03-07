@@ -9,7 +9,7 @@
     	<uses-permission android:name="android.permission.CALL_PHONE"/>  
     	<uses-permission android:name="android.permission.READ_CALL_LOG"/>
     	<uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
-<!--     <uses-permission android:name="android.permission.READ_PHONE_STATE"/> -->
+    	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 <!--     <uses-permission android:name="android.permission.ADD_VOICEMAIL"/> -->
 <!--     <uses-permission android:name="android.permission.USE_SIP"/> -->
 <!-- 	 <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/> -->
@@ -60,7 +60,7 @@
             android:value="JH38c7b8353c80c263ba815b63092a18e3" />
         
         
-        <activity android:name=".APIActivity" android:theme="@style/AppTheme" > 
+        <activity android:name=".APIActivity"  > 
              <intent-filter>
                  <action android:name="android.intent.action.MAIN" />
                  <category android:name="android.intent.category.LAUNCHER" />
@@ -68,7 +68,7 @@
         </activity>
         
 
-       <activity android:name=".TestActivity" android:theme="@android:style/Theme.DeviceDefault.Light"
+       <activity android:name=".TestActivity" 
             android:icon="@drawable/list_save_phone_normal"> 
 <!--              <intent-filter> -->
 <!--                  <action android:name="android.intent.action.MAIN" /> -->
