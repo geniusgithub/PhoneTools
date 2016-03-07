@@ -3,19 +3,21 @@ package com.geniusgithub.phonetools;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import com.geniusgithub.calllog.CallLogFragment;
@@ -26,13 +28,13 @@ public class APIActivity extends AppCompatActivity {
 
     private static final CommonLog log = LogFactory.createLog();
 
-    
+    private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
     
 
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,19 +45,12 @@ public class APIActivity extends AppCompatActivity {
 
 
     private void initView(){
-    	 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-         setSupportActionBar(toolbar);
+    	Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    	initToolBar(toolbar);
+         
+    	initDrawLayout(toolbar);
 
-         final ActionBar ab = getSupportActionBar();
-         ab.setHomeAsUpIndicator(R.drawable.ic_menu);
-         ab.setDisplayHomeAsUpEnabled(true);
-
-         mDrawerLayout = (DrawerLayout) findViewById(R.id.dl_main_drawer);
-         NavigationView navigationView = (NavigationView) findViewById(R.id.nv_main_navigation);
-         if (navigationView != null) {
-             setupDrawerContent(navigationView);
-         }
-
+        setupViewPager();
 //         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //         fab.setOnClickListener(new View.OnClickListener() {
 //             @Override
@@ -73,9 +68,50 @@ public class APIActivity extends AppCompatActivity {
 //             }
 //         });
 
-         mViewPager = (ViewPager) findViewById(R.id.viewpager);
-         setupViewPager();
 
+    }
+    
+    
+    private void initToolBar(Toolbar toolbar){
+	  
+	     setSupportActionBar(toolbar);
+	     toolbar.setTitle("Tools");
+	     toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+	    
+	     final ActionBar ab = getSupportActionBar();
+	     ab.setHomeAsUpIndicator(R.drawable.ic_menu);
+	     ab.setDisplayHomeAsUpEnabled(true);
+
+
+	
+    }
+    
+    private void initDrawLayout(Toolbar toolbar){
+    	   mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open,  R.string.close){
+               @Override
+               public void onDrawerOpened(View drawerView) {
+                   super.onDrawerOpened(drawerView);
+         
+               }
+               @Override
+               public void onDrawerClosed(View drawerView) {
+                   super.onDrawerClosed(drawerView);
+
+               }
+           };
+     
+           
+    	   mDrawerLayout = (DrawerLayout) findViewById(R.id.dl_main_drawer);
+           mDrawerLayout.setDrawerListener(mDrawerToggle);
+         
+           
+           
+           NavigationView navigationView = (NavigationView) findViewById(R.id.nv_main_navigation);
+           if (navigationView != null) {
+               setupDrawerContent(navigationView);
+           }
+       
+        
     }
     
     private void setupDrawerContent(NavigationView navigationView) {
@@ -91,6 +127,8 @@ public class APIActivity extends AppCompatActivity {
     }
     
     private void setupViewPager() {
+        mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
         List<String> titles = new ArrayList<String>();
         titles.add("P 1");
@@ -114,4 +152,32 @@ public class APIActivity extends AppCompatActivity {
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabsFromPagerAdapter(adapter);
     }
+
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		log.i("onOptionsItemSelected item.getItemId() = " + item.getItemId() + "\nhome = " + R.id.home + 
+					"\nic_menu = " + R.drawable.ic_menu + "\nR.id.homeAsUp = " + R.id.homeAsUp);
+		switch(item.getItemId()){
+		case R.id.homeAsUp:
+			return toggleHomeIcon();
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+
+	}
+    
+	
+	private boolean toggleHomeIcon(){
+		if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)){
+			mDrawerLayout.closeDrawers();
+		}else{
+			mDrawerLayout.openDrawer(Gravity.LEFT);
+		}
+		
+		return true;
+	}
+    
+    
+    
 }
