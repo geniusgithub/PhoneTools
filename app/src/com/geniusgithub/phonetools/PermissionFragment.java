@@ -60,16 +60,24 @@ public class PermissionFragment extends Fragment implements OnClickListener{
 	}
 	
 	private void getPermission(){
-		boolean flag = PermissionsUtil.hasNecessaryRequiredPermissions(mContext);
-		log.i("hasNecessaryRequiredPermissions = " + flag);
-		if (flag){
+		boolean start = RequestPermissionsActivity.startPermissionActivity(getActivity());
+		if (!start){
 			Toast.makeText(mContext, "hasNecessaryRequiredPermissions!!!", Toast.LENGTH_SHORT).show();
-		}else{
-			requestNecessaryRequiredPermissions();
 		}
+//		boolean flag = PermissionsUtil.hasNecessaryRequiredPermissions(mContext);
+//		log.i("hasNecessaryRequiredPermissions = " + flag);
+//		if (flag){
+//			Toast.makeText(mContext, "hasNecessaryRequiredPermissions!!!", Toast.LENGTH_SHORT).show();
+//		}else{
+//		
+//			
+//			requestNecessaryRequiredPermissions();
+//		}
 	}
 	
 	private void requestNecessaryRequiredPermissions(){
+		
+		
 		String []permission = new String[]{PermissionsUtil.PHONE,
 											PermissionsUtil.LOCATION,
 											PermissionsUtil.STORAGE};

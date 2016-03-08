@@ -9,6 +9,5 @@
 	<string name="permission_gosetting" >去设置</string>
 	<string name="permission_know" >知道了</string>
 		
-		
-		
+	<string name="required_permissions_promo">通讯录需要同时获得“电话”,“通讯录”,“存储空间”和“位置”的访问权限。"</string>
 </resources>
