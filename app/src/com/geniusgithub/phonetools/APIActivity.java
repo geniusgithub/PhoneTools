@@ -3,6 +3,7 @@ package com.geniusgithub.phonetools;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -121,6 +122,21 @@ public class APIActivity extends AppCompatActivity {
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         menuItem.setChecked(true);
                         mDrawerLayout.closeDrawers();
+                        
+                        
+                        
+                        switch(menuItem.getItemId()){
+	                        case R.id.nav_lite_common:
+	                        	goLiteCommon();
+	                        	break;
+	                        case R.id.nav_lite_http:
+	                        	goLiteHttp();
+	                        	break;
+                        }
+                        
+                        
+                        
+                        
                         return true;
                     }
                 });
@@ -179,5 +195,17 @@ public class APIActivity extends AppCompatActivity {
 	}
     
     
+	
+	private void goLiteCommon(){
+		Intent intent = new Intent();
+		intent.setClass(this, LiteCommonActivity.class);
+		startActivity(intent);
+	}
     
+	
+	private void goLiteHttp(){
+		Intent intent = new Intent();
+		intent.setClass(this, LiteHttpActivity.class);
+		startActivity(intent);
+	}
 }
