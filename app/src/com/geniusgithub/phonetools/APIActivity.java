@@ -132,6 +132,9 @@ public class APIActivity extends AppCompatActivity {
 	                        case R.id.nav_lite_http:
 	                        	goLiteHttp();
 	                        	break;
+	                        case R.id.nav_test:
+	                        	goTest();
+	                        	break;
                         }
                         
                         
@@ -206,6 +209,13 @@ public class APIActivity extends AppCompatActivity {
 	private void goLiteHttp(){
 		Intent intent = new Intent();
 		intent.setClass(this, LiteHttpActivity.class);
+		startActivity(intent);
+	}
+	
+	
+	private void goTest(){
+		Intent intent = new Intent();
+		intent.setClass(this, TestActivity.class);
 		startActivity(intent);
 	}
 }

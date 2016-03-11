@@ -65,7 +65,7 @@
             android:value="JH38c7b8353c80c263ba815b63092a18e3" />
         
         
-        <activity android:name=".APIActivity"  > 
+        <activity android:name=".APIActivity"  android:label="@string/app_name" > 
              <intent-filter>
                  <action android:name="android.intent.action.MAIN" />
                  <category android:name="android.intent.category.LAUNCHER" />
