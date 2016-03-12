@@ -18,7 +18,8 @@
     </style>
     
     
-    
+    <style name="ActivityBaseTheme" parent="Base.Theme.Design">
+    </style>
    
      <style name="Base.Theme.Design" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">#0fb73d</item>

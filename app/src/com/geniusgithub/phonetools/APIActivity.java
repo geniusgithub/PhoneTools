@@ -22,6 +22,7 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import com.geniusgithub.calllog.CallLogFragment;
+import com.geniusgithub.phonetools.productcode.ProductCodeActivity;
 import com.geniusgithub.phonetools.util.CommonLog;
 import com.geniusgithub.phonetools.util.LogFactory;
 
@@ -132,8 +133,8 @@ public class APIActivity extends AppCompatActivity {
 	                        case R.id.nav_lite_http:
 	                        	goLiteHttp();
 	                        	break;
-	                        case R.id.nav_test:
-	                        	goTest();
+	                        case R.id.nav_productcode:
+	                        	goProductCode();
 	                        	break;
                         }
                         
@@ -213,9 +214,9 @@ public class APIActivity extends AppCompatActivity {
 	}
 	
 	
-	private void goTest(){
+	private void goProductCode(){
 		Intent intent = new Intent();
-		intent.setClass(this, TestActivity.class);
+		intent.setClass(this, ProductCodeActivity.class);
 		startActivity(intent);
 	}
 }

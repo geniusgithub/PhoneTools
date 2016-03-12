@@ -12,9 +12,9 @@
             android:icon="@drawable/ic_event"
             android:title="Lite http"/>
         <item
-            android:id="@+id/nav_test"
+            android:id="@+id/nav_productcode"
             android:icon="@drawable/ic_headset"
-            android:title="test"/>
+            android:title="productcode"/>
         <item
             android:id="@+id/nav_discussion"
             android:icon="@drawable/ic_forum"
