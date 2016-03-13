@@ -57,8 +57,8 @@ public class LiteHttpActivity extends Activity {
     protected int count = 0;
     private boolean needRestore;
 
-    public static final String url = "http://baidu.com";
-    public static final String httpsUrl = "https://baidu.com";
+    public static final String url = "http://www.baidu.com";
+    public static final String httpsUrl = "https://www.baidu.com";
     //public static final String httpsUrl = "https://www.thanku.love";
     public static final String uploadUrl = "http://192.168.8.105:8080/upload";
     public static final String userUrl = "http://litesuits.com/mockdata/user_get";

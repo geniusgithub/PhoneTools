@@ -105,7 +105,7 @@ public class ProductCodeActivity extends AppCompatActivity {
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabsFromPagerAdapter(adapter);
         
-        mViewPager.setOffscreenPageLimit(mFragments.size());
+        mViewPager.setOffscreenPageLimit(fragments.size());
 
     }
     
