@@ -31,7 +31,6 @@ public class ProductCodeActivity extends AppCompatActivity {
 	private static EditText mEditText;
 	
 
-    protected static LiteHttp liteHttp;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,12 +78,12 @@ public class ProductCodeActivity extends AppCompatActivity {
         List<String> titles = new ArrayList<String>();
         titles.add("条码追溯");
         titles.add("条码达人");
-        titles.add("联图");
-        titles.add("物品编码");
+/*        titles.add("联图");
+        titles.add("物品编码");*/
         mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(0)));
         mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(1)));
-        mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(2)));
-        mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(3)));
+/*        mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(2)));
+        mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(3)));*/
         
         List<Fragment> fragments = new ArrayList<Fragment>();
         ProductCodeFragment fragment1 = new ProductCodeFragment();
@@ -93,12 +92,12 @@ public class ProductCodeActivity extends AppCompatActivity {
         ProductCodeFragment fragment2 = new ProductCodeFragment();
         fragment2.setType(ProductCodeFragment.TMDR_TYPE);
         fragments.add(fragment2);
-        ProductCodeFragment fragment3 = new ProductCodeFragment();
+/*        ProductCodeFragment fragment3 = new ProductCodeFragment();
         fragment3.setType(ProductCodeFragment.LT_TYPE);
         fragments.add(fragment3);
         ProductCodeFragment fragment4 = new ProductCodeFragment();
         fragment4.setType(ProductCodeFragment.WPBM_TYPE);
-        fragments.add(fragment4);
+        fragments.add(fragment4);*/
       
         FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
         mViewPager.setAdapter(adapter);
@@ -109,18 +108,8 @@ public class ProductCodeActivity extends AppCompatActivity {
 
     }
     
-    public static LiteHttp getLiteHttp(Context context) {
-        if (liteHttp == null) {
-            HttpConfig config = new HttpConfig(context.getApplicationContext()) // configuration quickly
-                    .setDebugged(true)                   // log output when debugged
-                    .setDetectNetwork(true)              // detect network before connect
-                    .setDoStatistics(true)               // statistics of time and traffic
-                    .setUserAgent("Mozilla/5.0 (...)")   // set custom User-Agent
-                    .setTimeOut(10000, 10000);             // connect and socket timeout: 10s
-            liteHttp = LiteHttp.newApacheHttpClient(config);
-        } 
-        return liteHttp;
-    }
+
+
     
 
 

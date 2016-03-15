@@ -18,8 +18,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Toast;
 
 import com.geniusgithub.calllog.CallLogFragment;
 import com.geniusgithub.phonetools.productcode.ProductCodeActivity;

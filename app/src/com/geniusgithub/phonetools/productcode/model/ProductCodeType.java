@@ -1,4 +1,5 @@
-package com.geniusgithub.phonetools.model;
+
+package com.geniusgithub.phonetools.productcode.model;
 
 import java.util.Map;
 

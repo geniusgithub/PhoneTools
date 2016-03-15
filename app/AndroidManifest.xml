@@ -67,10 +67,10 @@
         
         <activity android:name=".APIActivity"  android:label="@string/app_name"
              android:theme="@style/ActivityBaseTheme" > 
-<!--              <intent-filter> -->
-<!--                  <action android:name="android.intent.action.MAIN" /> -->
-<!--                  <category android:name="android.intent.category.LAUNCHER" /> -->
-<!--              </intent-filter> -->
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
         
         
@@ -105,10 +105,10 @@
             android:icon="@drawable/list_save_phone_normal"
             android:label="productCode"
             android:theme="@style/ActivityBaseTheme"> 
-             <intent-filter>
-                 <action android:name="android.intent.action.MAIN" />
-                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+<!--              <intent-filter> -->
+<!--                  <action android:name="android.intent.action.MAIN" /> -->
+<!--                  <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--              </intent-filter> -->
         </activity>
        
         

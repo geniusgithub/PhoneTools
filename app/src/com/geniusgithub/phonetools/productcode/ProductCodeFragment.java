@@ -1,29 +1,36 @@
 package com.geniusgithub.phonetools.productcode;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
-import android.telecom.PhoneAccountHandle;
-import android.telecom.TelecomManager;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.geniusgithub.phonetools.R;
-import com.geniusgithub.phonetools.model.IToStringMap;
-import com.geniusgithub.phonetools.model.ProductCodeType;
+import com.geniusgithub.phonetools.productcode.model.IToStringMap;
+import com.geniusgithub.phonetools.productcode.model.ProductCodeType;
+import com.geniusgithub.phonetools.productcode.model.ProductInfo;
+import com.geniusgithub.phonetools.productcode.model.ProductInfoType.TMZSProductInfo;
+import com.geniusgithub.phonetools.productcode.network.INetworkFrameEngine;
+import com.geniusgithub.phonetools.productcode.network.NetworkFrameEngineFactory;
+import com.geniusgithub.phonetools.productcode.proxy.IProductInfoCallback;
+import com.geniusgithub.phonetools.productcode.proxy.ProductCodeProxy;
 import com.geniusgithub.phonetools.util.CommonLog;
 import com.geniusgithub.phonetools.util.LogFactory;
+import com.litesuits.http.HttpConfig;
 import com.litesuits.http.LiteHttp;
 import com.litesuits.http.data.NameValuePair;
 import com.litesuits.http.exception.HttpException;
@@ -31,12 +38,6 @@ import com.litesuits.http.listener.HttpListener;
 import com.litesuits.http.request.StringRequest;
 import com.litesuits.http.request.param.HttpMethods;
 import com.litesuits.http.response.Response;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class ProductCodeFragment extends Fragment implements View.OnClickListener{
 
@@ -53,8 +54,8 @@ public class ProductCodeFragment extends Fragment implements View.OnClickListene
 	private Button mBtnGet;
 	private TextView mTextView;
 	
-	protected  LiteHttp liteHttp;
-
+	protected  INetworkFrameEngine mNetworkEngine;
+	private static LiteHttp liteHttp;
 	
 	public void setType(int type){
 	   mType = type;
@@ -65,9 +66,24 @@ public class ProductCodeFragment extends Fragment implements View.OnClickListene
         super.onAttach(activity);
         mContext = activity;
     	log.i("onAttach mType = " + mType);
-        liteHttp = ProductCodeActivity.getLiteHttp(mContext);
+    	
+    	mNetworkEngine = NetworkFrameEngineFactory.getNetworkFrameEngineInstance(mContext);
+    	liteHttp = getLiteHttp(mContext);
     }
     
+    private static LiteHttp getLiteHttp(Context context){
+    	if (liteHttp == null){
+  		  HttpConfig config = new HttpConfig(context.getApplicationContext()) // configuration quickly
+        .setDebugged(true)                   // log output when debugged
+        .setDetectNetwork(true)              // detect network before connect
+        .setDoStatistics(true)               // statistics of time and traffic
+        .setUserAgent("Mozilla/5.0 (...)")   // set custom User-Agent
+        .setTimeOut(10000, 10000);             // connect and socket timeout: 10s
+  		liteHttp = LiteHttp.newApacheHttpClient(config);
+    	}
+  		return liteHttp;
+    }
+
     
 
     @Override
@@ -184,10 +200,20 @@ public class ProductCodeFragment extends Fragment implements View.OnClickListene
 			return ;
 		}
 		
-		ProductCodeType.TmzsProductCode productCode = new ProductCodeType.TmzsProductCode ();
-		productCode.mProductCode = code;
-		
-		requestGet(tmzs_productCodeUri, productCode);
+		ProductCodeProxy.getTMZSProductInfo(mContext, code, new IProductInfoCallback() {
+			
+			@Override
+			public void onSuccess(ProductInfo info) {
+				updateContext(info.getShowString());
+			}
+			
+			@Override
+			public void onFailure(String result) {
+				updateContext(result);
+			}
+
+		});
+
 		
 	}
 	
@@ -199,10 +225,19 @@ public class ProductCodeFragment extends Fragment implements View.OnClickListene
 			return ;
 		}
 		
-		ProductCodeType.TmdrProductCode productCode = new ProductCodeType.TmdrProductCode ();
-		productCode.mGtin = code;
-		
-		requestGet(tmdr_productCodeUri, productCode);
+		ProductCodeProxy.getTMDRProductInfo(mContext, code, new IProductInfoCallback() {
+			
+			@Override
+			public void onSuccess(ProductInfo info) {
+				updateContext(info.getShowString());
+			}
+			
+			@Override
+			public void onFailure(String result) {
+				updateContext(result);
+			}
+
+		});
 		
 	}
 	
