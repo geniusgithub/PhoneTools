@@ -7,11 +7,15 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import com.geniusgithub.calllog.PhoneNumberUtilsEx;
 import com.geniusgithub.phonetools.util.CommonLog;
 import com.geniusgithub.phonetools.util.LogFactory;
 import com.geniusgithub.phonetools.util.ViewUtil;
@@ -25,6 +29,9 @@ public class UIFragment extends Fragment implements View.OnClickListener{
 	    
 	 private View mFloatButton;
 	 
+	 private EditText mErgenumberEditText;
+	 private Button mBtnGetErgenumber;
+	 private TextView mTVcontent;
 	 
     @Override
     public void onAttach(Activity activity) {
@@ -55,13 +62,36 @@ public class UIFragment extends Fragment implements View.OnClickListener{
         mFloatButton = view.findViewById(R.id.floating_action_button);
         ViewUtil.setupFloatingActionButton(mFloatButton, getResources().getDimensionPixelSize(R.dimen.floating_action_button_translation_z));
         
-    
+        
+        mErgenumberEditText = (EditText) mRootView.findViewById(R.id.et_getErinumber);
+        mBtnGetErgenumber = (Button) mRootView.findViewById(R.id.btn_getErinumber);		
+        mBtnGetErgenumber.setOnClickListener(this);
+        mTVcontent = (TextView) mRootView.findViewById(R.id.tv_content);
     }
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		switch(v.getId()){
+			case R.id.btn_getErinumber:
+				getErinumber();
+				break;
+		}
+	}
+	
+	private void getErinumber(){
 		
+		String number = mErgenumberEditText.getText().toString();
+		log.i("getErinumber = " + number);
+
+		StringBuffer stringBuffer = new StringBuffer();
+		boolean selfFlag = PhoneNumberUtilsEx.isEmergencyNumber(number, stringBuffer);
+		boolean systemFlag = android.telephony.PhoneNumberUtils.isEmergencyNumber(number);
+		
+		StringBuffer sBuffer = new StringBuffer();
+		sBuffer.append("selfFlag = "  + selfFlag + "\nsystemFlag = " + systemFlag);
+
+
+		mTVcontent.setText(sBuffer.toString() + "\n" + stringBuffer.toString());
 	}
 
 

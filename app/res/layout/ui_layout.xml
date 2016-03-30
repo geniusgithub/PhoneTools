@@ -14,6 +14,26 @@
               android:layout_height="match_parent"
               android:layout_marginTop="20dp"
               android:layout_marginLeft="20dp">
+              
+                   <EditText
+                     android:id="@+id/et_getErinumber"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:text="112"
+                     android:layout_marginBottom="20dp"/>
+                             
+                   <Button
+                     android:id="@+id/btn_getErinumber"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="getErinumber"
+                     android:layout_marginBottom="20dp"/>
+                   
+                   <TextView
+                     android:id="@+id/tv_content"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="20dp"/>
 
                  <Button
                      android:id="@+id/btn_shadow1"
@@ -23,7 +43,7 @@
                      android:drawableLeft="@drawable/call_bar_dial1_subordinate"
                      android:theme="@style/dialerbutton"
                      android:layout_marginBottom="20dp"
-                     />
+                     android:visibility="gone"/>
                  
                  
                    <Button
@@ -34,7 +54,7 @@
                      android:drawableLeft="@drawable/call_bar_dial2_subordinate"
                      android:background="@drawable/dialpad_call_button_single"
                      android:layout_marginBottom="20dp"
-                     />
+                     android:visibility="gone"/>
 
     			
 
