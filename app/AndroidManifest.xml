@@ -64,6 +64,15 @@
             android:name="com.thinkland.juheapi.openid"
             android:value="JH38c7b8353c80c263ba815b63092a18e3" />
         
+        <activity android:name=".TestConfigureActivity"    
+            android:label="test_configure"
+                android:configChanges="orientation|keyboardHidden|screenSize"> 
+<!--              <intent-filter> -->
+<!--                  <action android:name="android.intent.action.MAIN" /> -->
+<!--                  <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--              </intent-filter> -->
+        </activity>
+        
         
         <activity android:name=".APIActivity"  android:label="@string/app_name"
              android:theme="@style/ActivityBaseTheme" > 
