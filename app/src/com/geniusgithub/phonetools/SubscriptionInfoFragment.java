@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.geniusgithub.phonetools.model.SIMInfo;
 import com.geniusgithub.phonetools.util.CommonLog;
 import com.geniusgithub.phonetools.util.LogFactory;
 import com.geniusgithub.phonetools.util.SubscriptionManageReflect;
@@ -56,6 +58,7 @@ public class SubscriptionInfoFragment extends Fragment implements View.OnClickLi
         switch (v.getId()){
             case R.id.btn_sub:
                 getSub();
+            //    getInfoByDatabase();
                 break;
         }
     }
@@ -93,5 +96,17 @@ public class SubscriptionInfoFragment extends Fragment implements View.OnClickLi
         return sBuffer.toString();
 
     }
+    
+    
+//    public void getInfoByDatabase(){
+//    	SIMInfo sim0 = SIMInfo.getSIMInfoBySlot(mContext, 0);
+// 
+//    	
+//    	SIMInfo sim1 = SIMInfo.getSIMInfoBySlot(mContext, 1);
+//    	
+//    	String value = "slotid = 0\n" + (sim0 != null ? sim0.toString() : "null") + 
+//    					"\n======================\nslotid = 1\n" + (sim1 != null ? sim1.toString() : "null");
+//    	mTvSub.setText(value);
+//    }
 
 }

@@ -5,11 +5,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
         
+    
+    <Button
+    android:id="@+id/btn_get"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="获取sim卡信息">
+        
+    </Button>
       
     <TextView
+        android:id="@+id/textview"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="test_configure">
+    android:layout_height="wrap_content"
+    android:text="未获取到sim卡信息">
         
     </TextView>
     
