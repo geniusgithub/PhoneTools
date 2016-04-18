@@ -70,7 +70,7 @@ public class PhoneManagerFragment extends Fragment implements View.OnClickListen
             log.i("getAllPhoneAccountHandles size=" + size);
         }
         
- 
+        
     }
 
 

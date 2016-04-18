@@ -1,9 +1,11 @@
 package com.geniusgithub.phonetools;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -12,6 +14,7 @@ import android.widget.Toast;
 
 import com.geniusgithub.calllog.CallLogQueryHandler;
 import com.geniusgithub.phonetools.model.SIMInfo;
+import com.geniusgithub.phonetools.reflect.LoadMethod;
 import com.geniusgithub.phonetools.util.CommonLog;
 import com.geniusgithub.phonetools.util.LogFactory;
 
@@ -65,7 +68,8 @@ public class TestConfigureActivity extends Activity implements OnClickListener, 
 	@Override
 	public void onClick(View arg0) {
 	//	get();
-		getInfoByDatabase();
+	//	getInfoByDatabase();
+		volteTest();
 	}
 
 
@@ -104,6 +108,15 @@ public class TestConfigureActivity extends Activity implements OnClickListener, 
     					"\n======================\nslotid = 1\n" + (sim1 != null ? sim1.toString() : "null");
     	mTextView.setText(value);
     }
-
+    
+    
+	public void volteTest(){
+		boolean flag = LoadMethod.TelephonyManager_isVolteAvailable(getTelephonyManager(this));
+		mTextView.setText("volteTest, isVolteEnabled = " + flag);
+	}
+	
+	  private static TelephonyManager getTelephonyManager(Context context) {
+	        return (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+  }
     
 }

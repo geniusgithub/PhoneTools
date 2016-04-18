@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="com.geniusgithub.phonetools"
-          xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+          xmlns:android="http://schemas.android.com/apk/res/android">
+          
     <uses-sdk
         android:minSdkVersion="21"
         android:targetSdkVersion="23" />
@@ -67,10 +67,10 @@
         <activity android:name=".TestConfigureActivity"    
             android:label="test_configure"
                 android:configChanges="orientation|keyboardHidden|screenSize"> 
-<!--              <intent-filter> -->
+<!--             <intent-filter>  -->
 <!--                  <action android:name="android.intent.action.MAIN" /> -->
 <!--                  <category android:name="android.intent.category.LAUNCHER" /> -->
-<!--              </intent-filter> -->
+<!--              </intent-filter>  -->
         </activity>
         
         

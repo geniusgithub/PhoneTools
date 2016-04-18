@@ -2,6 +2,7 @@ package com.geniusgithub.phonetools;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -13,7 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.geniusgithub.calllog.PhoneNumberUtilsEx;
 import com.geniusgithub.phonetools.util.CommonLog;
@@ -33,6 +36,10 @@ public class UIFragment extends Fragment implements View.OnClickListener{
 	 private Button mBtnGetErgenumber;
 	 private TextView mTVcontent;
 	 
+	 private Button mBtnTest;
+	 private View shadowView;
+	 private View circle1;
+	 private View circle2;
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -67,6 +74,14 @@ public class UIFragment extends Fragment implements View.OnClickListener{
         mBtnGetErgenumber = (Button) mRootView.findViewById(R.id.btn_getErinumber);		
         mBtnGetErgenumber.setOnClickListener(this);
         mTVcontent = (TextView) mRootView.findViewById(R.id.tv_content);
+        
+        mBtnTest = (Button) mRootView.findViewById(R.id.test_action_button);
+        mBtnTest.setOnClickListener(this);
+        
+        circle1 = mRootView.findViewById(R.id.v_circle2);
+        circle2 = mRootView.findViewById(R.id.v_circle2);
+  //      shadowView =  mRootView.findViewById(R.id.ll_shadows);
+  //      shadowView.setOnClickListener(this);
     }
 
 	@Override
@@ -74,6 +89,10 @@ public class UIFragment extends Fragment implements View.OnClickListener{
 		switch(v.getId()){
 			case R.id.btn_getErinumber:
 				getErinumber();
+				break;
+			case R.id.test_action_button:
+				Toast.makeText(mContext, "onCLick!!!", Toast.LENGTH_SHORT).show();
+				broadcastImsRegistrationState();
 				break;
 		}
 	}
@@ -94,5 +113,15 @@ public class UIFragment extends Fragment implements View.OnClickListener{
 		mTVcontent.setText(sBuffer.toString() + "\n" + stringBuffer.toString());
 	}
 
-
+	
+    public static final String ACTION_IMS_REGISTRATION = "com.verizon.net.IMS_REGISTRATION";
+    public static final String EXTRA_STATE = "state";
+	  public static final String EXTRA_STATE_LTE_REGISTERED = "lte_registered";
+	  public static final String EXTRA_STATE_NOT_REGISTERED = "not_registered";
+	private  void broadcastImsRegistrationState() {
+		log.i("broadcastImsRegistrationState");
+	          Intent intent = new Intent(ACTION_IMS_REGISTRATION);
+	          intent.putExtra(EXTRA_STATE, EXTRA_STATE_LTE_REGISTERED); 
+	         mContext.sendBroadcast(intent);
+	  }
 }
