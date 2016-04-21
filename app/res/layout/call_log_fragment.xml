@@ -23,9 +23,13 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#fafafa"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"/>
+        android:layout_height="match_parent"/>
+    
+    
+<!--      <com.geniusgithub.calllog.EmptyContentView -->
+<!--         android:id="@+id/empty_list_view" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_gravity="center" /> -->
 
 </FrameLayout>

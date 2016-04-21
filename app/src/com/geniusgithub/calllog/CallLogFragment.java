@@ -19,6 +19,7 @@ package com.geniusgithub.calllog;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.database.Cursor;
+import android.graphics.Outline;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,10 +27,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewOutlineProvider;
 
 import com.geniusgithub.phonetools.R;
 import com.geniusgithub.phonetools.util.CommonLog;
 import com.geniusgithub.phonetools.util.LogFactory;
+
 
 /**
  * Displays a list of call log entries. To filter for a particular kind of call
@@ -68,53 +71,6 @@ public class CallLogFragment extends Fragment implements CallLogQueryHandler.Lis
 		super.onDestroy();
 	}
 
-    
-//    /** Called by the CallLogQueryHandler when the list of calls has been fetched or updated. */
-//    @Override
-//    public boolean onCallsFetched(Cursor cursor) {
-//        if (getActivity() == null || getActivity().isFinishing()) {
-//            // Return false; we did not take ownership of the cursor
-//            return false;
-//        }
-//        mAdapter.setLoading(false);
-//        mAdapter.changeCursor(cursor);
-//        // This will update the state of the "Clear call log" menu item.
-//        getActivity().invalidateOptionsMenu();
-//
-//        boolean showListView = cursor != null && cursor.getCount() > 0;
-//        mRecyclerView.setVisibility(showListView ? View.VISIBLE : View.GONE);
-//
-//        if (mScrollToTop) {
-//            // The smooth-scroll animation happens over a fixed time period.
-//            // As a result, if it scrolls through a large portion of the list,
-//            // each frame will jump so far from the previous one that the user
-//            // will not experience the illusion of downward motion.  Instead,
-//            // if we're not already near the top of the list, we instantly jump
-//            // near the top, and animate from there.
-//            if (mLayoutManager.findFirstVisibleItemPosition() > 5) {
-//                // TODO: Jump to near the top, then begin smooth scroll.
-//                mRecyclerView.smoothScrollToPosition(0);
-//            }
-//            // Workaround for framework issue: the smooth-scroll doesn't
-//            // occur if setSelection() is called immediately before.
-//            mHandler.post(new Runnable() {
-//               @Override
-//               public void run() {
-//                   if (getActivity() == null || getActivity().isFinishing()) {
-//                       return;
-//                   }
-//                   mRecyclerView.smoothScrollToPosition(0);
-//               }
-//            });
-//
-//            mScrollToTop = false;
-//        }
-//        return true;
-//    }
-
-
-
-
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedState) {
         View view = inflater.inflate(R.layout.call_log_fragment, container, false);
@@ -146,7 +102,7 @@ public class CallLogFragment extends Fragment implements CallLogQueryHandler.Lis
     public void onResume() {
         super.onResume();
         log.i("onResume");
-  //      fetchCalls();
+       fetchCalls();
     }
 
     @Override
@@ -176,6 +132,9 @@ public class CallLogFragment extends Fragment implements CallLogQueryHandler.Lis
 	        return true;
 	}
 
+	
+	
+	
 	public class DividerItemDecoration extends RecyclerView.ItemDecoration{
 		
 	}

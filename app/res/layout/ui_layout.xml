@@ -15,6 +15,11 @@
               android:layout_marginTop="20dp"
               android:layout_marginLeft="20dp">
               
+              <ImageButton
+		            android:layout_width="56dp"
+		            android:layout_height="56dp"
+		            android:src="@drawable/volte_close"/>
+              
                    <EditText
                      android:id="@+id/et_getErinumber"
                      android:layout_width="match_parent"
@@ -25,26 +30,50 @@
                    
       
                          
+<!--                      <Button -->
+<!--                      android:id="@+id/btn_getErinumber" -->
+<!--                      android:layout_width="108dp" -->
+<!--                      android:layout_height="50dp" -->
+<!--                      android:drawableLeft="@drawable/call_bar_dial1" -->
+<!--                      android:text="中国移动" -->
+<!--                      android:textSize="14dp" -->
+<!--                      android:gravity="left|center_vertical" -->
+<!-- 			         android:drawablePadding="8dp" -->
+<!--                      android:layout_marginBottom="20dp"/> -->
+	                   
+                     
                      <Button
-                     android:id="@+id/btn_getErinumber"
-                     android:layout_width="200dp"
+                     android:id="@+id/btn_getErinumber"    
+                     android:layout_width="108dp"
                      android:layout_height="50dp"
-                     android:text="getErinumber"
+                     android:drawableLeft="@drawable/call_bar_dial1"
+                     android:text="中国移动"
+                     android:textSize="14dp"
+                     android:gravity="left|center_vertical"
+			         android:drawablePadding="8dp"
+			         android:paddingLeft="13dp"
+			         android:paddingRight="13dp"
+			         android:theme="@style/DialerCallButton1"
                      android:layout_marginBottom="20dp"/>
-	                                            
  
                    
                      <RelativeLayout
-			       	    android:layout_width="wrap_content"
-			            android:layout_height="55dp">
+			       	    android:layout_width="108dp"
+			            android:layout_height="60dp"
+			             android:layout_marginBottom="20dp">
                      
-		                      <Button
-			                     android:layout_width="200dp"
-			                     android:layout_height="50dp"
-			                     android:text="getErin"
-			                     android:gravity="left|center_vertical"
-			                     android:drawablePadding="8dp"
-			                     android:drawableLeft="@drawable/call_bar_dial1_subordinate"/>
+		                     <Button
+		                     android:layout_width="108dp"
+		                     android:layout_height="50dp"
+		                     android:layout_centerInParent="true"
+		                     android:drawableLeft="@drawable/call_bar_dial1"
+		                     android:text="中国移动"
+		                     android:textSize="14dp"
+		                     android:gravity="left|center_vertical"
+					         android:drawablePadding="8dp"
+					         android:paddingLeft="13dp"
+					         android:paddingRight="13dp"
+					         android:theme="@style/DialerCallButton1"/>
                     </RelativeLayout>
                    
                    <TextView
@@ -59,7 +88,7 @@
                      android:layout_height="wrap_content"
                      android:text="call button"
                      android:drawableLeft="@drawable/call_bar_dial1_subordinate"
-                     android:theme="@style/dialerbutton"
+                     android:theme="@style/DialerCallButton1"
                      android:layout_marginBottom="20dp"
                      android:visibility="gone"/>
                  

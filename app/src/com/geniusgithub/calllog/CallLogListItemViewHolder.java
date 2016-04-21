@@ -11,9 +11,11 @@ public class CallLogListItemViewHolder extends RecyclerView.ViewHolder{
 	public TextView mDate;
 	public TextView mNumber;
 	
+	public CallLogSearchListItemView mItemView;
+	
 	public CallLogListItemViewHolder(View itemView) {
 		super(itemView);
-
+		mItemView = (CallLogSearchListItemView) itemView;
 		mNumber = (TextView) itemView.findViewById(R.id.number);
 		mDate = (TextView) itemView.findViewById(R.id.date);
 	}

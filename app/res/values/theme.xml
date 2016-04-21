@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppBaseTheme" parent="@android:style/Theme.DeviceDefault.Light.DarkActionBar"></style>
+
+     <style name="AppTheme" parent="AppBaseTheme">
+        <item name="lenovo_listitem_padding_top">@dimen/lenovo_listitem_padding_top</item>
+        <item name="lenovo_listitem_padding_right">@dimen/lenovo_listitem_padding_right</item>
+        <item name="lenovo_listitem_padding_bottom">@dimen/lenovo_listitem_padding_bottom</item>
+        <item name="lenovo_listitem_padding_left">@dimen/lenovo_listitem_padding_left</item>
+        <item name="lenovo_listitem_vertical_inner_margin">@dimen/lenovo_listitem_vertical_inner_margin</item>
+        <item name="lenovo_listitem_horizontal_inner_margin">@dimen/lenovo_listitem_horizontal_inner_margin</item>
+        <item name="lenovo_listitem_photo_size">@dimen/lenovo_listitem_photo_size</item>
+        <item name="lenovo_listitem_primary_textcolor">?android:attr/textColorPrimary</item>
+        <item name="lenovo_listitem_secondary_textcolor">?android:attr/textColorSecondary</item>
+        <item name="lenovo_listitem_subheader_background">@color/lenovo_listitem_subheader_background</item>
+        <item name="lenovo_listitem_subheader_minheight">@dimen/lenovo_listitem_subheader_minheight</item>
+        <item name="lenovo_listitem_divider">?android:attr/listDivider</item>
+        <item name="lenovo_listitem_activated_background">@color/lenovo_default_activated</item>
+        <item name="lenovo_listitem_default_background_color">@color/lenovo_default_background</item>
+        <item name="lenovo_listitem_prefix_highlight_color">@color/lenovo_default_highlight</item>
+        <item name="lenovo_listitem_contact_gap_between_label_and_data">5dp</item>
+        <item name="lenovo_listitem_contact_presence_icon_margin">4dp</item>
+        <item name="lenovo_listitem_contact_presence_icon_size">16dp</item>
+        <item name="lenovo_listitem_contact_data_width_weight">5</item>
+        <item name="lenovo_listitem_contact_label_width_weight">3</item>
+        <item name="lenovo_listitem_contact_header_text_indent">8dp</item>
+        <item name="lenovo_listitem_contact_text_indent">8dp</item>
+        <item name="lenovo_listitem_minheight_singleline_small">@dimen/lenovo_listitem_minheight_singleline_small</item>
+        <item name="lenovo_listitem_minheight_singleline_big">@dimen/lenovo_listitem_minheight_singleline_big</item>
+        <item name="lenovo_listitem_minheight_singleline_min">@dimen/lenovo_listitem_minheight_singleline_min</item>
+        <item name="lenovo_listitem_minheight_doubleline">@dimen/lenovo_listitem_minheight_doubleline</item>
+        <item name="lenovo_listitem_flexible_padding_top">@dimen/lenovo_listitem_flexible_padding_top</item>
+        <item name="lenovo_listitem_flexible_padding_bottom">@dimen/lenovo_listitem_flexible_padding_bottom</item>
+        <item name="lenovo_listitem_subheader_padding_left_withphoto">@dimen/lenovo_listitem_subheader_padding_left_withphoto</item>
+
+    </style>
+    
+</resources>

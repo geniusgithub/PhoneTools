@@ -115,7 +115,7 @@ public class CallLogQueryHandler extends AsyncQueryHandler {
     @Override
     protected synchronized void onQueryComplete(int token, Object cookie,
             Cursor cursor) {
-    	   log.i("onQueryComplete token = " + token);
+    	   log.i("onQueryComplete token = " + token + ", cursor = " + cursor);
         if (cursor == null) {
             return;
         }

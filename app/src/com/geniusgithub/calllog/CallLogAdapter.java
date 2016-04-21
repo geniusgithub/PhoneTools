@@ -20,10 +20,13 @@ public class CallLogAdapter extends RecyclerView.Adapter<ViewHolder>{
 	private Context mContext;
     private Cursor mCursor;
     
+    private CalllogAdapterHelper mCalllogAdapterHelper;
+    
     
 	public CallLogAdapter(Context context){
 		super();
 		mContext = context;
+		mCalllogAdapterHelper = new CalllogAdapterHelper(mContext);
 	}
 	
 	
@@ -102,7 +105,8 @@ public class CallLogAdapter extends RecyclerView.Adapter<ViewHolder>{
 	
     private ViewHolder createCallLogEntryViewHolder(ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View view = inflater.inflate(R.layout.call_log_list_item, parent, false);
+     //   View view = inflater.inflate(R.layout.call_log_list_item, parent, false);
+        View view = new CallLogSearchListItemView(mContext);
         CallLogListItemViewHolder viewHolder = new CallLogListItemViewHolder(view);
 
         return viewHolder;
@@ -116,12 +120,8 @@ public class CallLogAdapter extends RecyclerView.Adapter<ViewHolder>{
         
         CallLogListItemViewHolder callLogListItemViewHolder = (CallLogListItemViewHolder) viewHolder;
 
-
-        final String number = cursor.getString(CallLogQuery.NUMBER);
-        final long date = cursor.getLong(CallLogQuery.DATE);
-       
-        callLogListItemViewHolder.setNumber(number);
-        callLogListItemViewHolder.setDate(MyDataUtils.getDateShort(date));
+        CallLogSearchListItemView itemView = callLogListItemViewHolder.mItemView;
+        mCalllogAdapterHelper.bindView(itemView, mContext, cursor);
     }
     
     

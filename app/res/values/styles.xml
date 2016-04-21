@@ -29,8 +29,14 @@
     </style>
     
      
-     <style name="dialerbutton">
-          <item name="android:colorButtonNormal">#009900</item>
+    <style name="DialerCallButton1">
+          <item name="android:colorButtonNormal">#00c853</item>
 	 </style>
 	 
+    <style name="DialerCallButton2">
+          <item name="android:colorButtonNormal">#0288d1</item>
+	 </style>
+
+      <style name="Listitem_TextAppearancePrimary" parent="@android:style/TextAppearance.Material.Subhead"></style>
+          <style name="Listitem_TextAppearanceSecond" parent="@android:style/TextAppearance.Material.Small"></style>
 </resources>
