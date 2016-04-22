@@ -1,7 +1,10 @@
 package com.geniusgithub.phonetools;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -40,6 +43,8 @@ public class UIFragment extends Fragment implements View.OnClickListener{
 	 private View shadowView;
 	 private View circle1;
 	 private View circle2;
+	 
+	 private ImageButton mImageButton;
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -82,6 +87,9 @@ public class UIFragment extends Fragment implements View.OnClickListener{
         circle2 = mRootView.findViewById(R.id.v_circle2);
   //      shadowView =  mRootView.findViewById(R.id.ll_shadows);
   //      shadowView.setOnClickListener(this);
+        
+        mImageButton = (ImageButton) mRootView.findViewById(R.id.iv_more);
+        mImageButton.setOnClickListener(this);
     }
 
 	@Override
@@ -93,6 +101,10 @@ public class UIFragment extends Fragment implements View.OnClickListener{
 			case R.id.test_action_button:
 				Toast.makeText(mContext, "onCLick!!!", Toast.LENGTH_SHORT).show();
 				broadcastImsRegistrationState();
+				break;
+			case R.id.iv_more:
+				Dialog dialog = createMulDialog();
+				dialog.show();
 				break;
 		}
 	}
@@ -124,4 +136,23 @@ public class UIFragment extends Fragment implements View.OnClickListener{
 	          intent.putExtra(EXTRA_STATE, EXTRA_STATE_LTE_REGISTERED); 
 	         mContext.sendBroadcast(intent);
 	  }
+	
+	
+	
+	public Dialog createMulDialog(){
+		  AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setIcon(R.drawable.ic_launcher);
+        
+        String items[] = getResources().getStringArray(R.array.unknow_calllog__more_choices);
+
+        builder.setItems(items, new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Toast.makeText(getActivity(), "which = " + which, Toast.LENGTH_SHORT).show();;
+            }
+        });
+        return builder.create();
+	}
 }

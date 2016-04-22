@@ -16,6 +16,7 @@
               android:layout_marginLeft="20dp">
               
               <ImageButton
+                    android:id="@+id/iv_more"
 		            android:layout_width="56dp"
 		            android:layout_height="56dp"
 		            android:src="@drawable/volte_close"/>

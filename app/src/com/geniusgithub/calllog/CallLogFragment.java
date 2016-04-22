@@ -17,7 +17,10 @@
 package com.geniusgithub.calllog;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.graphics.Outline;
 import android.os.Bundle;
@@ -28,6 +31,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
+import android.widget.Toast;
 
 import com.geniusgithub.phonetools.R;
 import com.geniusgithub.phonetools.util.CommonLog;
@@ -132,7 +136,7 @@ public class CallLogFragment extends Fragment implements CallLogQueryHandler.Lis
 	        return true;
 	}
 
-	
+
 	
 	
 	public class DividerItemDecoration extends RecyclerView.ItemDecoration{
