@@ -26,4 +26,15 @@ public class LogFactory {
 		}
 		return log;
 	}
+	
+	public static CommonLog createNewLog(String tag) {
+		CommonLog log = new CommonLog();
+		if (tag == null || tag.length() < 1) {
+    		log.setTag(TAG);
+		} else {
+			log.setTag(tag);
+		}
+		return log;
+		
+	}
 }

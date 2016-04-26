@@ -59,6 +59,14 @@ public class OttoActivity extends FragmentActivity {
         BusProvider.getInstance().post(produceLocationEvent());
       }
     });
+    
+    findViewById(R.id.add_location).setOnClickListener(new OnClickListener() {
+        @Override public void onClick(View v) {
+            lastLatitude = DEFAULT_LAT;
+            lastLongitude = DEFAULT_LON;
+            BusProvider.getInstance().post(produceLocationEvent());
+        }
+      });
   }
 
   @Override protected void onResume() {

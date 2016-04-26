@@ -21,8 +21,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/move_location"
-                />
+                android:text="@string/move_location"/>
+                
+          <Button android:id="@+id/add_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="add_location"/>
     </LinearLayout>
     <fragment class="com.squareup.otto.sample.LocationMapFragment"
               android:id="@+id/map"
