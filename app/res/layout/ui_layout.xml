@@ -17,10 +17,21 @@
               
               <ImageButton
                     android:id="@+id/iv_more"
-		            android:layout_width="56dp"
-		            android:layout_height="56dp"
-		            android:src="@drawable/volte_close"/>
+		            android:layout_width="36dp"
+		            android:layout_height="48dp"
+		            android:src="@drawable/volte_close"
+		            android:background="?android:attr/selectableItemBackgroundBorderless"/>
               
+              
+               <ImageButton
+		            android:layout_width="56dp"
+		            android:layout_height="48dp"
+		            android:paddingLeft="20dp"
+		            android:paddingRight="0dp"
+		            android:src="@drawable/volte_close"
+		            android:background="?android:attr/selectableItemBackgroundBorderless"/>
+               
+               
                    <EditText
                      android:id="@+id/et_getErinumber"
                      android:layout_width="match_parent"

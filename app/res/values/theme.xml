@@ -33,7 +33,7 @@
         <item name="lenovo_listitem_flexible_padding_top">@dimen/lenovo_listitem_flexible_padding_top</item>
         <item name="lenovo_listitem_flexible_padding_bottom">@dimen/lenovo_listitem_flexible_padding_bottom</item>
         <item name="lenovo_listitem_subheader_padding_left_withphoto">@dimen/lenovo_listitem_subheader_padding_left_withphoto</item>
-
+        <item name="android:imageButtonStyle">@style/PhoneToolImagebuttonStyle</item>
     </style>
     
 </resources>

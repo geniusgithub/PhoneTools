@@ -16,9 +16,9 @@
             android:icon="@drawable/ic_headset"
             android:title="productcode"/>
         <item
-            android:id="@+id/nav_discussion"
+            android:id="@+id/nav_otto"
             android:icon="@drawable/ic_forum"
-            android:title="Big HJ"/>
+            android:title="Otto"/>
     </group>
 
     <item android:title="Version">

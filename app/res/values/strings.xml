@@ -3,6 +3,9 @@
     <string name="open" >打开</string>
     <string name="close" >关闭</string>
     
+    <string name="move_location">Move Location</string>
+    <string name="clear_location">Clear History</string>
+    
    	<string name="permission_introductione" >获取电话，位置，存储空间权限</string>
        <string name="permission_title" >提醒</string>       
 		<string name="permission_setting_guidedialog">phonetools的<xliff:g id="permission">%s</xliff:g>被禁用，导致应用无法正常运行，请尝试进入权限管理，打开上述权限后，重新运行。</string>

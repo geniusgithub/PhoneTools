@@ -102,6 +102,17 @@
         </activity>
         
         
+        <activity android:name="com.squareup.otto.sample.OttoActivity"
+             android:label="lite_http"
+              android:theme="@style/ActivityBaseTheme">
+<!--             <intent-filter> -->
+<!--                 <action android:name="android.intent.action.MAIN"/> -->
+<!--                 <category android:name="android.intent.category.LAUNCHER"/> -->
+<!--             </intent-filter> -->
+        </activity>
+        
+        
+        
          <activity android:name=".RequestPermissionsActivity"  > 
 <!--              <intent-filter> -->
 <!--                  <action android:name="android.intent.action.MAIN" /> -->

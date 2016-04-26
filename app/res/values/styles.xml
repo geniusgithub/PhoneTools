@@ -4,19 +4,15 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="Base.Theme.Design">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
-    </style>
+<!--     <style name="AppBaseTheme" parent="Base.Theme.Design"> -->
+<!--     </style> -->
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
+<!--     <style name="AppTheme" parent="AppBaseTheme"> -->
+<!--         <item name="android:imageButtonStyle">@style/PhoneToolImagebuttonStyle</item> -->
+<!--     </style> -->
     
+
     
     <style name="ActivityBaseTheme" parent="Base.Theme.Design">
     </style>
@@ -26,6 +22,11 @@
         <item name="colorPrimaryDark">#0ba823</item>
         <item name="colorAccent">#FF4081</item>
         <item name="android:windowBackground">@color/window_background</item>
+    </style>
+    
+     
+    <style name="PhoneToolImagebuttonStyle" parent="@android:style/Widget.DeviceDefault.Light.ImageButton">
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
     </style>
     
      

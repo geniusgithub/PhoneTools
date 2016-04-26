@@ -23,6 +23,7 @@ import com.geniusgithub.calllog.CallLogFragment;
 import com.geniusgithub.phonetools.productcode.ProductCodeActivity;
 import com.geniusgithub.phonetools.util.CommonLog;
 import com.geniusgithub.phonetools.util.LogFactory;
+import com.squareup.otto.sample.OttoActivity;
 
 public class APIActivity extends AppCompatActivity {
 
@@ -134,6 +135,9 @@ public class APIActivity extends AppCompatActivity {
 	                        case R.id.nav_productcode:
 	                        	goProductCode();
 	                        	break;
+	                        case R.id.nav_otto:
+	                        	goOtto();
+	                        	break;
                         }
                         
                         
@@ -215,6 +219,12 @@ public class APIActivity extends AppCompatActivity {
 	private void goProductCode(){
 		Intent intent = new Intent();
 		intent.setClass(this, ProductCodeActivity.class);
+		startActivity(intent);
+	}
+	
+	private void goOtto(){
+		Intent intent = new Intent();
+		intent.setClass(this, OttoActivity.class);
 		startActivity(intent);
 	}
 }

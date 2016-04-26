@@ -4,4 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     
      <dimen name="floating_action_button_translation_z">10dp</dimen>
+     
+       <dimen name="holo_gap">8dp</dimen>
 </resources>
