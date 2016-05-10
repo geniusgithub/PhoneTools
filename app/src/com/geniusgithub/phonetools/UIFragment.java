@@ -1,11 +1,16 @@
 package com.geniusgithub.phonetools;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -25,6 +30,7 @@ import com.geniusgithub.calllog.PhoneNumberUtilsEx;
 import com.geniusgithub.phonetools.util.CommonLog;
 import com.geniusgithub.phonetools.util.LogFactory;
 import com.geniusgithub.phonetools.util.ViewUtil;
+import com.litesuits.common.utils.AppUtil;
 
 public class UIFragment extends Fragment implements View.OnClickListener{
 
@@ -123,8 +129,44 @@ public class UIFragment extends Fragment implements View.OnClickListener{
 
 
 		mTVcontent.setText(sBuffer.toString() + "\n" + stringBuffer.toString());
+		
+	    SimpleDateFormat simpleformat=new SimpleDateFormat("yy/MM/dd HH:mm:ss");
+	    
+//		Date date = new Date(1461748395386L);
+//	    String dataString = simpleformat.format(date);
+//	    
+//	    
+//		Date date2 = new Date(1461748542522L);
+//		String data2String = simpleformat.format(date2);
+//		
+//		
+//		
+//		
+//		Date date3 = new Date(1461748786373L);
+//		String data3String = simpleformat.format(date3);
+//		
+//		
+//		Date date4 = new Date(1461748799308L);
+//		String data4String = simpleformat.format(date4);
+//		
+//		
+//		mTVcontent.setText("data1 = " + dataString + "\ndata2String = " + data2String + "\ndata3String = " + data3String + "\nndata3String = " + data4String);
+//	
+		Date date0 = new Date(1461841091045L);
+		String data0String = simpleformat.format(date0);
+		mTVcontent.setText("data0String = " + data0String);
+		
+		
+		try {
+			Thread.sleep(10 * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
+
+    
 	
     public static final String ACTION_IMS_REGISTRATION = "com.verizon.net.IMS_REGISTRATION";
     public static final String EXTRA_STATE = "state";
