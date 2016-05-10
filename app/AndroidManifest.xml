@@ -131,6 +131,14 @@
 <!--              </intent-filter> -->
         </activity>
        
+         
+         
+         
+        <provider android:name="com.geniusgithub.phonetools.provider.UserPreferredSimProvider"
+                  android:authorities="com.geniusgithub.phonetools.providers.UserPreferredSimProvider"
+                  android:exported="true"
+                  android:multiprocess="false"/>
+         
         
     </application>
 
