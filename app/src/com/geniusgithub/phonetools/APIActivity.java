@@ -173,7 +173,7 @@ public class APIActivity extends AppCompatActivity {
         fragments.add(new UIFragment());
         fragments.add(new CallLogFragment());
         fragments.add(new PermissionFragment());
-        fragments.add(new TestOttoFragment());
+        fragments.add(new ProviderFragment());
         FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);

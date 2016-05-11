@@ -304,6 +304,8 @@ public class UserPreferredSimProvider extends ContentProvider{
 	    public Cursor query(Uri uri, String[] select, String where, String[] whereArgs, String order) {
 
 
+	        Log.i(TAG, "In query() uri = " + uri.toString() + ", match = " + uriMatcher.match(uri));
+	        
 	        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
 	        Cursor rv = null;
@@ -349,10 +351,15 @@ public class UserPreferredSimProvider extends ContentProvider{
 	                        ? uri.getLastPathSegment() : "";
 
 	                String query_number = PhoneNumberUtils.toCallerIDMinMatch(phone_number);
-	                qb.appendWhere(String.format("number = '%s'", query_number));
+	                String appendWhere = String.format("number = '%s'", query_number);
 	                if (where == null) {
-	                    qb.appendWhere(" AND call_count >= 3");
+	                	appendWhere += (" AND call_count >= 3");
 	                }
+	                qb.appendWhere(appendWhere);
+	              
+	                
+	                Log.d(TAG, "USER_SIM_PREF_ENTRY for query...appendWhere --> " + appendWhere);
+	                  
 
 	                break;
 
@@ -424,7 +431,7 @@ public class UserPreferredSimProvider extends ContentProvider{
 	        int count = 0;
 	        SQLiteDatabase db = mDatabaseHelper.getWritableDatabase();
 
-	        Log("In delete()");
+	        Log.i(TAG,"In delete()");
 
 	        try {
 	            switch (uriMatcher.match(uri)){
@@ -475,7 +482,7 @@ public class UserPreferredSimProvider extends ContentProvider{
 	            } else {
 	                getContext().getContentResolver().notifyChange(CONTENT_URI_ENTRY, null);
 	            //    mBackupManager.dataChanged();
-	                Log("BackupManager.dataChanged");
+	                Log.i(TAG, "BackupManager.dataChanged");
 	            }
 	        }
 
@@ -494,7 +501,7 @@ public class UserPreferredSimProvider extends ContentProvider{
 	        long    id         = 0;
 	        SQLiteDatabase db  = mDatabaseHelper.getWritableDatabase();
 
-	        Log("In insert()");
+	        Log.i(TAG, "In insert() uri = " + uri.toString() + ", match = " + uriMatcher.match(uri));
 
 	        switch (uriMatcher.match(uri)){
 	            case SIM_CONFIG:
@@ -533,10 +540,10 @@ public class UserPreferredSimProvider extends ContentProvider{
 	                    cur = db.query(DATABASE_TABLE_NUMBER_PREFERENCE, new String[]{ID}, where, arges, null,null,null);
 
 	                    if(cur.getCount() == 0){
-	                        Log("in insert(): new Insert");
+	                        Log.i(TAG, "in insert(): new Insert");
 	                        id = db.insert(DATABASE_TABLE_NUMBER_PREFERENCE, null, values);
 	                    }else{
-	                        Log("in insert(): already exist, will be a update");
+	                        Log.i(TAG, "in insert(): already exist, will be a update");
 	                        cur.moveToNext();
 	                        id = cur.getLong(0);
 	                        db.update(DATABASE_TABLE_NUMBER_PREFERENCE, values, where, arges);
@@ -554,7 +561,7 @@ public class UserPreferredSimProvider extends ContentProvider{
 	                }
 
 	               // mBackupManager.dataChanged();
-	                Log("mBackupManager.dataChanged");
+	                Log.i(TAG, "mBackupManager.dataChanged");
 	                break;
 	            }
 
@@ -571,7 +578,13 @@ public class UserPreferredSimProvider extends ContentProvider{
 	                    return null;
 	                }
 
+	               
 	               id = db.insert(DATABASE_TABLE_USER_SIM_PREFERENCE, null, values);
+	               
+		              
+	                
+	                Log.d(TAG, "USER_SIM_PREF_ENTRY for insert...contentValue = " + values.toString());
+	                  
 
 	               if (id > 0) {
 	                   rv = ContentUris.withAppendedId(uri, id);
@@ -611,7 +624,7 @@ public class UserPreferredSimProvider extends ContentProvider{
 	        SQLiteDatabase db = mDatabaseHelper.getWritableDatabase();
 	        int count = 0;
 
-	        Log("In update()");
+	        Log.i(TAG, "In update() uri = " + uri.toString() + ", match = " + uriMatcher.match(uri));
 	        try{
 	            switch (uriMatcher.match(uri)){
 	                case SIM_CONFIG:{
@@ -641,8 +654,9 @@ public class UserPreferredSimProvider extends ContentProvider{
 	                    if(values.containsKey(NUMBER)){
 	                        values.remove(NUMBER);
 	                    }
-	                    count = db.update(DATABASE_TABLE_USER_SIM_PREFERENCE, values, extendWhere(uri,where), whereArgs);
-
+	                    String whereSelection = extendWhere(uri, where);
+	                    count = db.update(DATABASE_TABLE_USER_SIM_PREFERENCE, values, whereSelection, whereArgs);
+	                    Log.d(TAG, "USER_SIM_PREF_ENTRY for update...whereSelection --> " + whereSelection + "\ncontentValue -> "+values.toString());
 	                    break;
 
 	                case PREFERENCE_SETTING:
@@ -721,7 +735,7 @@ public class UserPreferredSimProvider extends ContentProvider{
 	            } else {
 	                getContext().getContentResolver().notifyChange(CONTENT_URI_ENTRY, null);
 	             //   mBackupManager.dataChanged();
-	                Log("mBackupManager.dataChanged()");
+	                Log.i(TAG, "mBackupManager.dataChanged()");
 	            }
 	        }
 
@@ -811,14 +825,6 @@ public class UserPreferredSimProvider extends ContentProvider{
 	        return whereStr;
 	    }
 
-	    static public void Log(String str){
-	        if(DEBUG && Log.isLoggable(TAG, Log.DEBUG)){
-	            Log.d(TAG, str);
-	        }
-	    }
-
-	    
-	    
 	    
 	    
 	    

@@ -17,11 +17,9 @@ public class SmartHelper {
     private static final String NUMBER = "number";
     
     private Context mContext;
-    private String mNumber;
     
-    public SmartHelper(Context context, String number) {
+    public SmartHelper(Context context) {
         mContext = context;
-        mNumber = number;
     
     }
     
@@ -50,11 +48,14 @@ public class SmartHelper {
         return subId;
     }
 
-    private void updateUsageData(String number, String simSerial) {
+
+    
+    
+    public void updateUsageData(String number, String simSerial) {
 
         ContentValues values = new ContentValues();
 
-        Log.d(TAG, "updateUsageData number");
+        Log.d(TAG, "updateUsageData number = " + number + ", simSerial = " + simSerial);
         if (TextUtils.isEmpty(number) || TextUtils.isEmpty(simSerial)) {
             return ;
         }
@@ -76,10 +77,10 @@ public class SmartHelper {
                 values.put(UserPreferredSimProvider.CALL_COUNT, 1);
                 mContext.getContentResolver().insert(UserPreferredSimProvider.CONTENT_URI_USER_SIM_PREFERENCE, values);
             } else {
-                 Log.d(TAG," already exist, will be a update");
+            
                 cur.moveToNext();
                 int callCount = (int)(cur.getInt(cur.getColumnIndex(UserPreferredSimProvider.CALL_COUNT))) +1;
-
+                Log.d(TAG," already exist, will be a update callCount = " + callCount);
                 values.put(UserPreferredSimProvider.CALL_COUNT, callCount);
                 mContext.getContentResolver().update(uri, values, where, null);
             }

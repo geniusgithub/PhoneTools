@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+
+             <LinearLayout android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginTop="20dp"
+              android:layout_marginLeft="20dp">
+              
+                       		<Button
+		              		android:id="@+id/btn_clean"
+				            android:layout_width="match_parent"
+				            android:layout_height="wrap_content"
+				            android:text="clean all data"/>	
+              
+		             <LinearLayout android:orientation="horizontal"
+		              android:layout_width="match_parent"
+		              android:layout_height="wrap_content"
+		              android:layout_marginTop="20dp"
+		              android:layout_marginLeft="20dp">      
+		              		<Button
+		              		android:id="@+id/btn_set"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:text="SET"/>	               
+		                   <EditText
+		                     android:id="@+id/et_number"
+		                     android:layout_width="match_parent"
+		                     android:layout_height="wrap_content"
+		                     android:text="18150396888"
+		                     android:hint="number"
+		                     android:inputType="number"
+		                     android:layout_weight="1"/>         
+		                   <EditText
+		                     android:id="@+id/et_sernum"
+		                     android:layout_width="match_parent"
+		                     android:layout_height="wrap_content"
+		                     android:text="2"
+		                     android:hint="serinum"
+		                     android:inputType="number"
+		                     android:layout_weight="1"/>                
+	    			  </LinearLayout>
+	    			  
+	              
+		             <LinearLayout android:orientation="horizontal"
+		              android:layout_width="match_parent"
+		              android:layout_height="wrap_content"
+		              android:layout_marginTop="20dp"
+		              android:layout_marginLeft="20dp">
+		              		<Button
+		              		android:id="@+id/btn_get"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:text="GET"/>	              		               
+		                   <EditText
+		                     android:id="@+id/et_numberex"
+		                     android:layout_width="match_parent"
+		                     android:layout_height="wrap_content"
+		                     android:text="18150396888"
+		                     android:hint="number"
+		                     android:inputType="number"
+		                     android:layout_weight="1"/>               
+	    			  </LinearLayout>
+
+		             
+		             <TextView
+		              android:id="@+id/tv_content"
+		              android:layout_width="match_parent"
+		              android:layout_height="wrap_content">        
+		             </TextView>
+	             
+    		 </LinearLayout>          
+
+
+    </ScrollView>
+
+</LinearLayout>
