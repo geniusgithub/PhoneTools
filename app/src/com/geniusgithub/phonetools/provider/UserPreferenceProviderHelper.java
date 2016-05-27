@@ -38,11 +38,11 @@ public class UserPreferenceProviderHelper {
     	  return count;
     }
     
-    public static UserSimPreferenceObject newInstancefromCursor(Cursor cursor){
-    	UserSimPreferenceObject object = new UserSimPreferenceObject();
-    	object.number = cursor.getString(UserPreferenceProviderHelper.USER_SIM_PREFERENCE_NUMBER);
-    	object.sim_sn = cursor.getString(UserPreferenceProviderHelper.USER_SIM_PREFERENCE_USER_SIM_SN);
-    	object.call_count = cursor.getInt(UserPreferenceProviderHelper.USER_SIM_PREFERENCE_CALL_COUNT);
-    	return object;
-    }
+//    public static UserSimPreferenceObject newInstancefromCursor(Cursor cursor){
+//    	UserSimPreferenceObject object = new UserSimPreferenceObject();
+//    	object.number = cursor.getString(UserPreferenceProviderHelper.USER_SIM_PREFERENCE_NUMBER);
+//    	object.sim_sn = cursor.getString(UserPreferenceProviderHelper.USER_SIM_PREFERENCE_USER_SIM_SN);
+//    	object.call_count = cursor.getInt(UserPreferenceProviderHelper.USER_SIM_PREFERENCE_CALL_COUNT);
+//    	return object;
+//    }
 }

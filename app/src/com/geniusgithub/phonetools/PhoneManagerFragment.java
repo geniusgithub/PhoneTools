@@ -1,9 +1,12 @@
 package com.geniusgithub.phonetools;
 
+import android.Manifest.permission;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,6 +22,7 @@ import android.widget.TextView;
 
 import com.geniusgithub.phonetools.util.CommonLog;
 import com.geniusgithub.phonetools.util.LogFactory;
+import com.geniusgithub.phonetools.util.PermissionsUtil;
 
 import java.util.List;
 
@@ -63,7 +67,8 @@ public class PhoneManagerFragment extends Fragment implements View.OnClickListen
         }
     }
 
-    private void getInfo(){
+    @TargetApi(23)
+	private void getInfo(){
 //        TelecomManager telecomManager = getTelecomManager();
 //        List<PhoneAccountHandle> mPhoneAccountHandle = telecomManager.getAllPhoneAccountHandles();
 //
@@ -97,11 +102,23 @@ public class PhoneManagerFragment extends Fragment implements View.OnClickListen
 //        mTvPhoneManager.setText(value);
 //        
         
-    		PackageInfo packageInfo1 = getPackageInfo(getActivity(), "com.motorola.android.providers.userpreferredsim");
-    		PackageInfo packageInfo2 = getPackageInfo(getActivity(), "com.android.dialer");
-    		String value = "userpreferredsim.packageInfo = " + packageInfo1;
-    		value +=  "\ndialer.packageInfo = " + packageInfo2;
-    		mTvPhoneManager.setText(value);
+//    		PackageInfo packageInfo1 = getPackageInfo(getActivity(), "com.motorola.android.providers.userpreferredsim");
+//    		PackageInfo packageInfo2 = getPackageInfo(getActivity(), "com.android.dialer");
+//    		String value = "userpreferredsim.packageInfo = " + packageInfo1;
+//    		value +=  "\ndialer.packageInfo = " + packageInfo2;
+//    		mTvPhoneManager.setText(value);
+    	
+    	String value = "null";
+    	if (PermissionsUtil.sIsAtLeastM){
+    		TelecomManager telecomManager = getTelecomManager();
+        	PhoneAccountHandle phoneAccountHandle = telecomManager.getUserSelectedOutgoingPhoneAccount();
+        	if (phoneAccountHandle != null){
+        		value = "id = " + phoneAccountHandle.getId();	
+        	}
+    	}
+    
+    	
+    	mTvPhoneManager.setText(value);
     }
 
 	

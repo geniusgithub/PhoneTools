@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.geniusgithub.phonetools.provider.SmartHelper;
 import com.geniusgithub.phonetools.provider.UserPreferenceProviderHelper;
-import com.geniusgithub.phonetools.provider.UserSimPreferenceObject;
+//import com.geniusgithub.phonetools.provider.UserSimPreferenceObject;
 import com.geniusgithub.phonetools.util.CommonLog;
 import com.geniusgithub.phonetools.util.LogFactory;
 
@@ -91,25 +91,25 @@ public class ProviderFragment extends Fragment implements View.OnClickListener{
 	    private void get(){
 	    	String number = mEditTextNumberEx.getText().toString();
 
-	    	Cursor cursor = UserPreferenceProviderHelper.queryUserSimPreference(mContext, number);
-	    	if (cursor != null){
-	    		int count = cursor.getCount();
-	    		int index = 0;
-	    		log.i("queryUserSimPreference count = " + count);
-		    	StringBuffer stringBuffer = new StringBuffer();
-		    	stringBuffer.append("count = " + count + "\n");
-	    		while (cursor.moveToNext()) {
-					UserSimPreferenceObject object = UserPreferenceProviderHelper.newInstancefromCursor(cursor);
-					stringBuffer.append("index = " + index + "-->\n" + object.toString() + "\n");
-					index++;
-				}
-	    		
-	    		int subID = mSmartHelper.getLearnModeSim(number);
-	    		stringBuffer.append("subID = " + subID);
-	    		updateContetn(stringBuffer.toString());
-	    	}else{
-	    		updateContetn("queryUserSimPreference cursor = null...");
-	    	}
+//	    	Cursor cursor = UserPreferenceProviderHelper.queryUserSimPreference(mContext, number);
+//	    	if (cursor != null){
+//	    		int count = cursor.getCount();
+//	    		int index = 0;
+//	    		log.i("queryUserSimPreference count = " + count);
+//		    	StringBuffer stringBuffer = new StringBuffer();
+//		    	stringBuffer.append("count = " + count + "\n");
+//	    		while (cursor.moveToNext()) {
+//					UserSimPreferenceObject object = UserPreferenceProviderHelper.newInstancefromCursor(cursor);
+//					stringBuffer.append("index = " + index + "-->\n" + object.toString() + "\n");
+//					index++;
+//				}
+//	    		
+//	    		int subID = mSmartHelper.getLearnModeSim(number);
+//	    		stringBuffer.append("subID = " + subID);
+//	    		updateContetn(stringBuffer.toString());
+//	    	}else{
+//	    		updateContetn("queryUserSimPreference cursor = null...");
+//	    	}
 	    	
 	    }
 	    
