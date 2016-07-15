@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- text size -->
+    <dimen name="lenovo_default_textsize_exlarge">22sp</dimen>
+    <dimen name="lenovo_default_textsize_large">20sp</dimen>
+    <dimen name="lenovo_default_textsize_big">18sp</dimen>
+    <dimen name="lenovo_default_textsize_medium">16sp</dimen>
+    <dimen name="lenovo_default_textsize_normal">14sp</dimen>
+    <dimen name="lenovo_default_textsize_small">12sp</dimen>
+    <dimen name="lenovo_default_textsize_mini">10sp</dimen>
+    <dimen name="lenovo_default_textsize_medium_for_detailcalllog">16dp</dimen>
+    <dimen name="lenovo_default_textsize_normal_for_detailcalllog">14dp</dimen>
+    <dimen name="lenovo_default_textsize_small_for_detailcalllog">12dp</dimen>
+
+    <!-- listitemview -->
+    <dimen name="lenovo_listitem_padding_top">8dp</dimen>
+    <dimen name="lenovo_listitem_padding_right">16dp</dimen>
+    <dimen name="lenovo_listitem_padding_bottom">8dp</dimen>
+    <dimen name="lenovo_listitem_padding_left">16dp</dimen>
+    <dimen name="lenovo_listitem_vertical_inner_margin">0dp</dimen>
+    <dimen name="lenovo_listitem_horizontal_inner_margin">16dp</dimen>
+    <dimen name="lenovo_listitem_photo_size">40dp</dimen>
+    <dimen name="lenovo_listitem_subheader_minheight">48dp</dimen>
+    <dimen name="lenovo_listitem_minheight_singleline_small">48dp</dimen>
+    <dimen name="lenovo_listitem_minheight_singleline_big">56dp</dimen>
+    <dimen name="lenovo_listitem_minheight_doubleline">72dp</dimen>
+    <dimen name="lenovo_listitem_flexible_padding_top">16dp</dimen>
+    <dimen name="lenovo_listitem_flexible_padding_bottom">16dp</dimen>
+    <dimen name="lenovo_listitem_subheader_padding_left_withphoto">16dp</dimen>
+    <dimen name="lenovo_listitem_padding_right_withbladeview">32dp</dimen>
+    <dimen name="lenovo_listitem_gap_between_checkbox_and_data">16dp</dimen>
+
+    <!-- searchview -->
+    <dimen name="lenovo_searchview_edittext_minheight">36dp</dimen>
+    <dimen name="lenovo_searchview_margin_top">8dp</dimen>
+    <dimen name="lenovo_searchview_margin_right">16dp</dimen>
+    <dimen name="lenovo_searchview_margin_bottom">8dp</dimen>
+    <dimen name="lenovo_searchview_margin_left">16dp</dimen>
+
+    <!-- edittext -->
+    <dimen name="lenovo_edittext_minheight">36dp</dimen>
+    <dimen name="lenovo_edittext_margin_right">16dp</dimen>
+    <dimen name="lenovo_edittext_margin_left">16dp</dimen>
+
+    <!-- fab -->
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- tab -->
+    <dimen name="tab_height">48dp</dimen>
+    <!-- textcolor alpha -->
+    <item name="disabled_alpha_material_light" format="float" type="dimen">0.26</item>
+    <!-- actionmode -->
+    <dimen name="actionmode_inner_customview">20dp</dimen>
+    <!-- maintabview -->
+    <dimen name="main_tabview_newsize">5dp</dimen>
+    <!-- maintabview -->
+    <dimen name="main_tabview_newmargin">3dp</dimen>
+    <!-- actionbar elevation -->
+    <dimen name="action_bar_elevation_material">4dp</dimen>
+    <!-- AlertDialog view -->
+    <dimen name="lenovo_alertdialog_padding_top">20dp</dimen>
+    <dimen name="lenovo_alertdialog_padding_left">24dp</dimen>
+    <dimen name="lenovo_alertdialog_padding_bottom">24dp</dimen>
+    <dimen name="lenovo_alertdialog_padding_bottom_forlist">16dp</dimen>
+    <dimen name="lenovo_alertdialog_padding_right">24dp</dimen>
+    <dimen name="lenovo_alertdialog_horizontal_interval">24dp</dimen>
+    <dimen name="lenovo_alertdialog_vertical_interval">16dp</dimen>
+    <dimen name="lenovo_alertdialog_customview_minheight">84dp</dimen>
+    <dimen name="lenovo_alertdialog_horizontalspace_between_checkboxandtext">0dp</dimen>
+    <dimen name="lenovo_alertdialog_padding_toplarge_checkbox">24dp</dimen>
+    <dimen name="lenovo_alertdialog_padding_topnormal_checkbox">8dp</dimen>
+    <dimen name="lenovo_alertdialog_padding_bottom_checkbox">16dp</dimen>
+    <dimen name="lenovo_alertdialog_padding_bottomsmall_checkbox">8dp</dimen>
+    <!-- conversation list item iconlist vertical inner margin -->
+    <dimen name="lenovo_conversation_iconlist_vertical_inner_margin">4dp</dimen>
+    <dimen name="lenovo_conversation_iconlist_min_width">20dp</dimen>
+
+    <!-- speed dial -->
+    <dimen name="speed_dial_name_text_size">14sp</dimen>
+    <dimen name="speed_dial_number_height">35dip</dimen>
+    <dimen name="speed_dial_voice_mail_blank_height">0dip</dimen>
+
+    <!-- common gridview -->
+    <dimen name="commongridview_columnwidth">150dp</dimen>
+    <dimen name="commongridview_padding_top">12dp</dimen>
+    <!--
+    <dimen name="commongridview_padding_bottom">20dp</dimen>
+    <dimen name="commongridview_padding_left">12dp</dimen>
+    <dimen name="commongridview_padding_right">12dp</dimen>
+    -->
+    <dimen name="commongridview_verticalspacing">24dp</dimen>
+    <dimen name="commongridview_textview_margintop">4dp</dimen>
+    <dimen name="commongridview_item_top">20dp</dimen>
+    <dimen name="commongridview_item_iconsize">60dp</dimen>
+    <dimen name="commongridview_item_dotsize">8dp</dimen>
+
+    <!-- for dialpad search list view only -->
+    <dimen name="dialpad_listitem_call_time_margin_right">12dp</dimen>
+    <dimen name="dialpad_listitem_horizontal_inner_margin">16dp</dimen>
+    <dimen name="dialpad_listitem_horizontal_specail_margin">5dp</dimen>
+    <dimen name="dialpad_listitem_divider_width">14dp</dimen>
+    <dimen name="dialpad_listitem_divider_height">16dp</dimen>
+    <dimen name="dialpad_listitem_vertical_divider_width">14dp</dimen>
+    <dimen name="dialpad_listitem_vertical_divider_height">16dp</dimen>
+    <dimen name="calllog_listitem_horizontal_inner_margin">8dp</dimen>
+    <dimen name="calllog_listitem_subheader_minheight">24dp</dimen>
+
+    
+    
+    <!-- for calldetail icon size only -->
+    <dimen name="dialpad_listitem_calldetail_height_size">48dp</dimen>
+    <dimen name="dialpad_listitem_calldetail_width_size">36dp</dimen>
+    <dimen name="dialpad_listitem_calldetail_padding_right">4dp</dimen>
+    
+    <!-- favorite message listview -->
+    <dimen name="lenovo_favorite_messages_listitem_vertical_inner_margin">10dp</dimen>
+    <dimen name="lenovo_favorite_messages_listitem_attachment_width">75dp</dimen>
+    <dimen name="lenovo_favorite_messages_listitem_attachment_height">75dp</dimen>
+    <dimen name="lenovo_calllog_empty_margin_top">70dp</dimen>
+
+    <!-- dialpad -->
+    <dimen name="dialpad_digits_text_size_min">18sp</dimen>
+    <dimen name="dialpad_digits_text_size_delta">5sp</dimen>
+    <dimen name="dialer_fling_length">50dip</dimen>
+    <dimen name="dialer_ripple_radius">46dp</dimen>
+
+    <!-- contactdetail view only -->
+    <dimen name="backbar_title_padding_left">12dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="fab_press_translation_z">3dp</dimen>
+    <dimen name="fab_size">50dp</dimen>
+    <dimen name="fab_size_small">40dp</dimen>
+    <dimen name="fab_icon_size">50dp</dimen>
+    <dimen name="fab_window_size">82dp</dimen>
+    <dimen name="fab_window_margin">14dp</dimen>
+
+    <!-- dialpad -->
+    <dimen name="lenovo_listitem_minheight_singleline_min">48dp</dimen>
+    <dimen name="lenovo_listitem_extra_paddingtop">8dp</dimen>
+
+    <!-- contact detail -->
+    <dimen name="lenovo_contactdetail_bottom_empty_bar">8dp</dimen>
+    <dimen name="lenovo_contactdetail_tablayout_height">48dp</dimen>
+</resources>

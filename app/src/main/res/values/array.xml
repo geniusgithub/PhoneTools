@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+        <string-array name="unknow_calllog__more_choices">
+        <item>新建联系人</item>
+        <item>添加到已有联系人</item>
+        <item>发送信息</item>
+        <item>加入黑名单</item>
+        <item>联系人详情</item>
+    </string-array>
+    
+    <string-array name="contact_calllog__more_choices">
+        <item>发送信息</item>
+        <item>加入黑名单</item>
+        <item>联系人详情</item>
+    </string-array>
+    
+</resources>

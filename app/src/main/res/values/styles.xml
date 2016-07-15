@@ -1,0 +1,43 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+<!--     <style name="AppBaseTheme" parent="Base.Theme.Design"> -->
+<!--     </style> -->
+
+    <!-- Application theme. -->
+<!--     <style name="AppTheme" parent="AppBaseTheme"> -->
+<!--         <item name="android:imageButtonStyle">@style/PhoneToolImagebuttonStyle</item> -->
+<!--     </style> -->
+    
+
+    
+    <style name="ActivityBaseTheme" parent="Base.Theme.Design">
+    </style>
+   
+     <style name="Base.Theme.Design" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#0fb73d</item>
+        <item name="colorPrimaryDark">#0ba823</item>
+        <item name="colorAccent">#FF4081</item>
+        <item name="android:windowBackground">@color/window_background</item>
+    </style>
+    
+     
+    <style name="PhoneToolImagebuttonStyle" parent="@android:style/Widget.DeviceDefault.Light.ImageButton">
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+    
+     
+    <style name="DialerCallButton1">
+          <item name="android:colorButtonNormal">#00c853</item>
+	 </style>
+	 
+    <style name="DialerCallButton2">
+          <item name="android:colorButtonNormal">#0288d1</item>
+	 </style>
+
+      <style name="Listitem_TextAppearancePrimary" parent="@android:style/TextAppearance.Material.Subhead"></style>
+          <style name="Listitem_TextAppearanceSecond" parent="@android:style/TextAppearance.Material.Small"></style>
+</resources>
